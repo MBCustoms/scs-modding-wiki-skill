@@ -1,0 +1,74 @@
+name: Bug Report
+description: The skill returns incorrect, missing, or broken information
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in as much detail as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the incorrect behavior clearly.
+      placeholder: "Claude returned X but the correct answer is Y..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: What prompt did you use?
+      description: The exact question or instruction you gave Claude.
+      placeholder: "How do I define a truck engine in a .sii file?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: What should Claude have said or done?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      description: Copy the actual response from Claude if possible.
+    validations:
+      required: true
+
+  - type: input
+    id: skill-version
+    attributes:
+      label: Skill version
+      description: Which version of the skill are you using? (Check crawl_report.md or CHANGELOG.md)
+      placeholder: "v1.0.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Claude Code platform
+      options:
+        - Claude Code CLI
+        - Claude Code Desktop (Mac)
+        - Claude Code Desktop (Windows)
+        - Claude Code Web (claude.ai/code)
+        - VS Code extension
+        - JetBrains extension
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other information that might help diagnose the issue.
+    validations:
+      required: false

@@ -1,0 +1,56 @@
+name: Skill Improvement
+description: Suggest an improvement to how the skill routes, searches, or answers questions
+title: "[Skill] "
+labels: ["enhancement", "skill"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to suggest improvements to the skill's behavior — how it finds relevant pages, how it responds to prompts, what categories it uses, or how SKILL.md could be improved.
+
+  - type: dropdown
+    id: improvement-area
+    attributes:
+      label: What area does this affect?
+      options:
+        - SKILL.md — skill instructions / routing
+        - index.json — search index / keywords
+        - Category organization
+        - Quick lookup examples
+        - Answer quality / completeness
+        - New topic coverage
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current behavior
+      description: What does the skill do now that could be improved?
+      placeholder: "When I ask about X, Claude looks at Y but misses Z..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired behavior
+      description: What should it do instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example prompt
+      description: A concrete example that demonstrates the improvement.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+    validations:
+      required: false

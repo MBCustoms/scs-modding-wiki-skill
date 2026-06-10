@@ -1,0 +1,46 @@
+name: Documentation Issue
+description: A documentation file is incorrect, incomplete, or missing
+title: "[Docs] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to report issues with the project documentation in `docs/`, `README.md`, `CONTRIBUTING.md`, or other repository files.
+
+        For outdated wiki content in `skill/docs/`, use the **Wiki Sync Issue** template instead.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Which document has the issue?
+      options:
+        - README.md
+        - docs/installation.md
+        - docs/updating.md
+        - docs/architecture.md
+        - docs/data-sources.md
+        - docs/coverage.md
+        - docs/faq.md
+        - docs/troubleshooting.md
+        - CONTRIBUTING.md
+        - PROJECT_STRUCTURE.md
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is the issue?
+      description: Describe what is wrong, unclear, or missing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: If you have a specific correction or addition in mind, describe it here.
+    validations:
+      required: false

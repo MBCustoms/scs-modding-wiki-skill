@@ -1,0 +1,66 @@
+name: Wiki Sync Issue
+description: A wiki page in skill/docs/ is outdated compared to the official SCS wiki
+title: "[Wiki Sync] "
+labels: ["wiki-sync", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The skill content was crawled from the [SCS Software Modding Wiki](https://modding.scssoft.com/wiki/Documentation) on 2026-06-10. Use this template to report pages that have changed on the official wiki since then.
+
+  - type: input
+    id: wiki-page
+    attributes:
+      label: Wiki page title
+      description: The full title of the page that has changed.
+      placeholder: "Documentation/Engine/Units/accessory_engine_data"
+    validations:
+      required: true
+
+  - type: input
+    id: wiki-url
+    attributes:
+      label: Wiki page URL
+      placeholder: "https://modding.scssoft.com/wiki/Documentation/Engine/Units/accessory_engine_data"
+    validations:
+      required: true
+
+  - type: input
+    id: skill-file
+    attributes:
+      label: Skill file path
+      description: The corresponding file in skill/docs/ (leave blank if unsure)
+      placeholder: "skill/docs/engine/units/accessory_engine_data.md"
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-changed
+    attributes:
+      label: What changed?
+      description: Describe what is different between the current skill file and the official wiki.
+      placeholder: "The official wiki now documents the 'new_parameter' field added in game version 1.50, but the skill file doesn't mention it."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of change
+      options:
+        - New content added to wiki
+        - Existing content updated on wiki
+        - Content removed from wiki
+        - Formatting / structure change
+        - New page added to wiki (not yet in skill)
+        - Page removed from wiki
+    validations:
+      required: true
+
+  - type: input
+    id: game-version
+    attributes:
+      label: Related game version (if known)
+      placeholder: "ETS2 1.50 / ATS 1.50"
+    validations:
+      required: false
