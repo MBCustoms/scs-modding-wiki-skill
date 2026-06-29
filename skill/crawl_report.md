@@ -1,14 +1,14 @@
 ﻿# SCS Modding Wiki Skill — Crawl Report
 
-**Generated:** 2026-06-10
+**Generated:** 2026-06-29
 **Status:** COMPLETE ✅
 
 ## Summary
 
 | Metric | Value |
 |---|---|
-| Total pages in manifest | 162 |
-| Files written | 162 |
+| Total pages in manifest | 163 |
+| Files written | 163 |
 | Missing files | 0 |
 | Undersized files (< 100 bytes) | 0 |
 
@@ -19,7 +19,7 @@
 | engine_units | 46 |
 | tools_blender | 33 |
 | engine_config | 23 |
-| engine | 18 |
+| engine | 19 |
 | engine_sound | 12 |
 | tools_workshop | 11 |
 | tools_map_editor | 10 |
@@ -27,11 +27,17 @@
 | engine_sdk | 2 |
 | root | 1 |
 
+## Changes (v1.61 update — 2026-06-29)
+
+| Page | Action |
+|---|---|
+| [Documentation/Engine/Game Radio](https://modding.scssoft.com/wiki/Documentation/Engine/Game_Radio) | **Added** — new offline radio modding documentation |
+
 ## Source
 
 - Wiki: https://modding.scssoft.com/wiki/Documentation
 - API: https://modding.scssoft.com/api.php?action=query&list=allpages&apprefix=Documentation&aplimit=500
-- Fetched: 2026-06-10
+- Fetched: 2026-06-29
 
 ## All Pages Fetched
 

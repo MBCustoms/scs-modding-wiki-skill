@@ -1,7 +1,7 @@
 ﻿{
     "version":  "1.0",
-    "generated":  "2026-06-10",
-    "total_pages":  162,
+    "generated":  "2026-06-29",
+    "total_pages":  163,
     "pages":  [
                   {
                       "title":  "Documentation",
@@ -441,6 +441,22 @@
                       "keywords":  [
                                        "engine",
                                        "formats"
+                                   ]
+                  },
+                  {
+                      "title":  "Documentation/Engine/Game Radio",
+                      "file":  "docs/engine/game_radio.md",
+                      "url":  "https://modding.scssoft.com/wiki/Documentation/Engine/Game_Radio",
+                      "category":  "engine",
+                      "keywords":  [
+                                       "engine",
+                                       "game",
+                                       "radio",
+                                       "offline",
+                                       "music",
+                                       "station",
+                                       "audio",
+                                       "mod"
                                    ]
                   },
                   {

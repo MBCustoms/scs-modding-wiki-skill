@@ -136,6 +136,7 @@ $AllPages = @(
     "Documentation/Engine/Detours",
     "Documentation/Engine/Fonts",
     "Documentation/Engine/Formats",
+    "Documentation/Engine/Game Radio",
     "Documentation/Engine/Game data",
     "Documentation/Engine/Game data/Player trucks definitions",
     "Documentation/Engine/Game user path",

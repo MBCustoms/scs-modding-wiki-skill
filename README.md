@@ -7,7 +7,7 @@
 > A [Claude Code](https://claude.ai/code) skill that gives AI assistants instant access to the complete [SCS Software Modding Wiki](https://modding.scssoft.com/wiki/Documentation) — Documentation mirror generated from 162 pages covering ETS2 and ATS modding.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Wiki Pages](https://img.shields.io/badge/wiki%20pages-162-blue)](skill/crawl_report.md)
+[![Wiki Pages](https://img.shields.io/badge/wiki%20pages-163-blue)](skill/crawl_report.md)
 [![Platform](https://img.shields.io/badge/platform-Claude%20Code-orange)](https://claude.ai/code)
 [![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)](https://github.com/MBCustoms/scs-modding-wiki-skill)
 
@@ -46,17 +46,17 @@ This repository packages the entire SCS Software Modding Wiki into a Claude Code
 | Engine Units | 46 | Truck accessories, trailers, cargo, engines, transmissions, paint jobs, wheels |
 | Blender Tools | 33 | Export, import, materials, shaders, locators, animations, variant system |
 | Engine Config | 23 | All configuration variables (g_*, r_*) |
-| Engine Core | 18 | Console, formats, fonts, game data, mod manager, detours, multi-monitor |
+| Engine Core | 19 | Console, formats, fonts, game data, game radio, mod manager, detours, multi-monitor |
 | Engine Sound | 12 | Sound modding, truck audio, mixer, cabin filtering, tires, transmission |
 | Workshop Uploader | 11 | Validation, error codes, mod structure, Steam formatting |
 | Map Editor | 10 | Shortcuts, batch renaming, ATS rescale, sector/note APIs |
 | Tools | 6 | Archive extractor/packer, conversion tools, dedicated server, font generator |
 | Engine SDK | 2 | Telemetry SDK and changelog |
 | Root | 1 | Documentation index |
-| **Total** | **162** | **Complete official SCS modding documentation** |
+| **Total** | **163** | **Complete official SCS modding documentation** |
 
 **Source:** [modding.scssoft.com/wiki/Documentation](https://modding.scssoft.com/wiki/Documentation)
-**Last crawled:** 2026-06-10
+**Last crawled:** 2026-06-29
 
 ---
 
