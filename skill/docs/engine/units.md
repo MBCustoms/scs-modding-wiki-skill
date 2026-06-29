@@ -1,116 +1,101 @@
 # Documentation/Engine/Units
 
+**Source:** https://modding.scssoft.com/wiki/Documentation/Engine/Units
+
 ## What is unit?
 
-Units are objects inside the SCS game engine that can be serialized or deserialized, providing content creators a way to define various game components.
+Units are objects within the SCS game engine designed for serialization and deserialization, enabling content creators to define various game components. Each unit comprises:
 
-A unit consists of:
-
-- **Name**: Units can be nameless or named using 12-character tokens separated by dots (e.g., `vehicle.dummy.truck`). Create nameless units using a dot prefix like `.my_mod.nameless.units`.
-- **Attributes**: Data storage for numbers, text, unit connections, and arrays.
+- **Name**: Units can be nameless or named using 12-character tokens separated by dots (e.g., `vehicle.dummy.truck`). To create nameless units, prefix the name with a dot (e.g., `.my_mod.nameless.units`).
+- **Attributes**: Data storage for numbers, text, unit connections, and collections thereof.
 
 ## SII files
 
-Units are stored in SII files in either plain-text or binary format. Only plain-text is used for definitions.
+Units are stored in SII (Serialized Information Interface) files, available in plain-text and binary formats. Only plain-text format is used for definitions.
 
 ### Structure
 
-A basic SII file contains:
+SII files follow this layout:
 
 ```
 SiiNunit
 {
-some_unit : .my_mod.unit
-{
-    attribute_number: 40
-    attribute_string: "TEST STRING"
-    attribute_unit: test.unit
-    attribute_float3: (1.0, 1.0, 1.0)
-    attribute_float_number_ieee754: &40490f5a
-}
+    class_name : unit.name
+    {
+        attribute_number: 40
+        attribute_string: "TEST STRING"
+        attribute_unit: test.unit
+        attribute_float3: (1.0, 1.0, 1.0)
+        attribute_float_ieee754: &40490f5a
+    }
 }
 ```
-
-Always include a blank line at the file end.
 
 ### Unit definition entry
 
-Format: `class name : unit name { attributes }`
+Format specification: `class name : unit name { attributes }`
 
 ### Comments
 
-Multi-line comments use `/* */` syntax:
+C-style multi-line comments use `/* */` syntax:
 
 ```
 /* Definition of some unit.
- *
  * Author: You */
-some_unit : .my_mod.unit
-{
-}
 ```
 
 Single-line comments use `#` or `//`:
 
 ```
-some_unit : .my_mod.unit // Some unit
+some_unit : .my_mod.unit // Comment
 {
-    # This value should be tweaked after users feedback
-    some_value: 45.875
+    value: 45.875  # Inline comment
 }
 ```
 
 ### Includes
 
-Use `@include` to insert other files:
+The `@include` directive incorporates external file contents:
 
 ```
-SiiNunit
-{
-example: doing.includes
-{
-    foo: "bar"
-    over: 9000
-@include "some_file_to_include.sui"
-}
-}
+@include "filename.sui"
 ```
 
-The included file becomes part of the parent file. Use the `.sui` extension for included unit files without the `SiiNunit` header.
+**Requirements**: The directive must begin a new line with no preceding whitespace. Inline usage is prohibited.
 
-**Important**: `@include` must start at the beginning of a line with no whitespace before it. Inline or indented includes will not work.
+Use the `.sui` extension for included serialized unit files without the `SiiNunit` header.
 
 ## Attribute types
 
-| Type | Value | Example | Notes |
-|------|-------|---------|-------|
-| string | "x" | `attribute: "String value"` | |
-| float | x | `attribute: 1.0` or `&3f800000` (IEEE754 hex) | |
-| float2 | (x, y) | `attribute: (1.0, 2.0)` | |
-| float3 | (x, y, z) | `attribute: (1.0, 5.0, 3.0)` | |
-| float4 | (x, y, z, w) | `attribute: (1.0, 5.0, 3.0, 9.0)` | |
-| placement | (x, y, z) (w; x, y, z) | `attribute: (0, 0, 0) (1; 0, 0, 0)` | |
-| fixed | x | `attribute: 10` | |
-| fixed2 | (x, y) | `attribute: (10, 22)` | |
-| fixed3 | (x, y, z) | `attribute: (10, 22, 33)` | |
-| fixed4 | (x, y, z, w) | `attribute: (10, 22, 33, 44)` | |
-| int2 | (x, y) | `attribute: (20, 69)` | |
-| quaternion | (w, x, y, z) | `attribute: (1.0, 0.0, 0.0, 0.0)` | |
-| s16 | x | `attribute: -15` | |
-| s32 | x | `attribute: -15` | |
-| s64 | x | `attribute: -15` | |
-| u16 | x | `attribute: 15` | |
-| u32 | x | `attribute: 15` | |
-| u64 | x | `attribute: 15` | |
-| bool | x | `attribute: true` or `false` | |
-| token | x | `attribute: value` | Max 12 chars, lowercase alphanumeric and underscore only |
+| Type | Value Format | Example | Notes |
+|------|--------------|---------|-------|
+| string | "x" | `attribute: "String value"` | Text data |
+| float | x | `attribute: 1.0` or `&3f800000` | Decimal or IEEE754 hex notation |
+| float2 | (x, y) | `(1.0, 2.0)` | Two-component vector |
+| float3 | (x, y, z) | `(1.0, 5.0, 3.0)` | Three-component vector |
+| float4 | (x, y, z, w) | `(1.0, 5.0, 3.0, 9.0)` | Four-component vector |
+| placement | (x, y, z) (w; x, y, z) | `(0, 0, 0) (1; 0, 0, 0)` | Position and rotation |
+| fixed | x | `attribute: 10` | Integer fixed-point |
+| fixed2 | (x, y) | `(10, 22)` | Two-component fixed |
+| fixed3 | (x, y, z) | `(10, 22, 33)` | Three-component fixed |
+| fixed4 | (x, y, z, w) | `(10, 22, 33, 44)` | Four-component fixed |
+| int2 | (x, y) | `(20, 69)` | Two-component integer |
+| quaternion | (w, x, y, z) | `(1.0, 0.0, 0.0, 0.0)` | Rotation quaternion |
+| s16 | x | `attribute: -15` | Signed 16-bit integer |
+| s32 | x | `attribute: -15` | Signed 32-bit integer |
+| s64 | x | `attribute: -15` | Signed 64-bit integer |
+| u16 | x | `attribute: 15` | Unsigned 16-bit integer |
+| u32 | x | `attribute: 15` | Unsigned 32-bit integer |
+| u64 | x | `attribute: 15` | Unsigned 64-bit integer |
+| bool | x | `true` or `false` | Boolean value |
+| token | x | `attribute: value` | Alphanumeric string, max 12 characters, lowercase and underscore only |
 | owner_ptr | x | `attribute: .some.nameless.unit` | References units within same SiiNunit |
 | link_ptr | x | `attribute: some.named.unit` | References named units defined elsewhere |
-| resource_tie | "x" | `attribute: "path/to/some/resource.pma"` | Binds animations to models |
+| resource_tie | "x" | `"path/to/resource.pma"` | Binds animations to models |
 
 ### Arrays
 
-Dynamic arrays use repeated syntax:
+Standard array syntax:
 
 ```
 attribute_name[]: value
@@ -118,13 +103,13 @@ attribute_name[]: value2
 attribute_name[]: value3
 ```
 
-Fixed arrays specify size first:
+Fixed-array format:
 
 ```
-attribute_name: 3
-attribute_name[0]: 1
-attribute_name[1]: 5
-attribute_name[2]: 9
+attribute_name: 3           (size)
+attribute_name[0]: 1        (element 1)
+attribute_name[1]: 5        (element 2)
+attribute_name[2]: 9        (element 3)
 ```
 
 ## Documented Unit Types

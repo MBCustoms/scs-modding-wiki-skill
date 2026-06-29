@@ -32,6 +32,11 @@
 | Page | Action |
 |---|---|
 | [Documentation/Engine/Game Radio](https://modding.scssoft.com/wiki/Documentation/Engine/Game_Radio) | **Added** — new offline radio modding documentation |
+| [Documentation/Engine/Units/accessory transmission data](https://modding.scssoft.com/wiki/Documentation/Engine/Units/accessory_transmission_data) | **Updated** — added `reverse_crawls` attribute (1.60) |
+| [Documentation/Engine/Units/accessory engine data](https://modding.scssoft.com/wiki/Documentation/Engine/Units/accessory_engine_data) | **Updated** — added `power` and `secondary_power` attributes for electric engines (1.60) |
+| [Documentation/Engine/Units](https://modding.scssoft.com/wiki/Documentation/Engine/Units) | **Updated** — attribute type table and documented unit types list refreshed |
+| [Documentation/Engine/Console/Commands/Editor](https://modding.scssoft.com/wiki/Documentation/Engine/Console/Commands/Editor) | **Updated** — expanded command descriptions |
+| [Documentation/Tools/SCS Workshop Uploader/Changelog](https://modding.scssoft.com/wiki/Documentation/Tools/SCS_Workshop_Uploader/Changelog) | **Updated** — added v1.60.0 and v1.60.1 entries |
 
 ## Source
 
